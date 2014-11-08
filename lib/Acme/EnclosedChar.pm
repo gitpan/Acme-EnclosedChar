@@ -12,7 +12,7 @@ our @EXPORT_OK = qw/
     enclose_all
 /;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 my %MAP;
 {
@@ -23,6 +23,8 @@ my %MAP;
                             . '㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿');
     my @alphabet_uc = _s('ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ');
     my @alphabet_lc = _s('ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ');
+    my @symbols   = _s('-=+*');
+    my @symbols_u = _s('⊖⊜⊕⊛');
 
     for my $i (0..9) {
         $MAP{numbers}->{$i} = shift @numbers;
@@ -34,6 +36,10 @@ my %MAP;
         $MAP{alphabet_uc}->{$i}    = shift @alphabet_uc;
         $MAP{alphabet_lc}->{lc $i} = shift @alphabet_lc;
     }
+    for my $i (@symbols) {
+        $MAP{symbols}->{$i} = shift @symbols_u;
+    }
+    $MAP{symbols}->{list} = \@symbols;
 
     my @katakana = _s('アイウエオカキクケコサシスセソタチツテトナニヌネノ'
                     . 'ハヒフヘホマミムメモヤユヨラリルレロワヰヱヲ');
@@ -85,6 +91,10 @@ sub enclose {
         $string =~ s!$i!$MAP{alphabet_uc}->{$i}!g;
         my $j = lc $i;
         $string =~ s!$j!$MAP{alphabet_lc}->{$j}!g;
+    }
+
+    for my $i ( @{$MAP{symbols}->{list}} ) {
+        $string =~ s!\Q$i\E!$MAP{symbols}->{$i}!g;
     }
 
     return $string;

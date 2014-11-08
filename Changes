@@ -1,4 +1,7 @@
 Revision history for Perl extension Acme::EnclosedChar
 
+0.02    Sat Nov  8 13:45:52 JST 2014
+        - Also encode '-=+*'
+
 0.01    Sat Nov  8 11:53:21 JST 2014
         - original version
