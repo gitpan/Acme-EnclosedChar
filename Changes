@@ -1,5 +1,13 @@
 Revision history for Perl extension Acme::EnclosedChar
 
+0.04    Sat Nov  8 19:27:42 JST 2014
+
+            commit 6159dda0c36935b8ea579eef0405ebac3e33b939
+            Author: Kent Fredric <kentfredric@gmail.com>
+            Date:   Sat Nov 8 22:32:16 2014 +1300
+
+                Hardcode UTF8 parsed string to avoid Mojibake
+
 0.03    Sat Nov  8 14:32:14 JST 2014
         - fix garbled META.json manually
 

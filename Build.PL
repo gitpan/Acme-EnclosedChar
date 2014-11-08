@@ -2,9 +2,17 @@ use strict;
 use warnings;
 use Module::Build;
 
+my $abstract = 'Ⓔⓝⓒⓛⓞⓢⓔⓓ Ⓐⓛⓟⓗⓐⓝⓤⓜⓔⓡⓘⓒⓢ Ⓔⓝⓒⓞⓓⓔⓡ';
+if ( $] > 5.008001 ) {
+  utf8::decode($abstract);
+} else {
+  $abstract ='Enclosed Alphanumerics Encoder';
+}
+
 my $builder = Module::Build->new(
     name                => 'Acme-EnclosedChar',
     module_name         => 'Acme::EnclosedChar',
+    dist_abstract       => $abstract,
     license             => 'perl',
     dist_author         => 'Dai Okabayashi <bayashi@cpan.org>',
     dist_version_from   => 'lib/Acme/EnclosedChar.pm',
