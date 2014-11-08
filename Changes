@@ -1,5 +1,8 @@
 Revision history for Perl extension Acme::EnclosedChar
 
+0.03    Sat Nov  8 14:32:14 JST 2014
+        - fix garbled META.json manually
+
 0.02    Sat Nov  8 13:45:52 JST 2014
         - Also encode '-=+*'
 
