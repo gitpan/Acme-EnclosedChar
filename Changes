@@ -1,5 +1,8 @@
 Revision history for Perl extension Acme::EnclosedChar
 
+0.06    Sun Nov 16 20:54:41 JST 2014
+        - more works double digit number fine(thanks Thomas)
+
 0.05    Sun Nov 16 11:39:55 JST 2014
         - refactor
 

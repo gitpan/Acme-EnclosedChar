@@ -12,7 +12,7 @@ our @EXPORT_OK = qw/
     enclose_all
 /;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 my %MAP;
 {
@@ -27,7 +27,7 @@ my %MAP;
 
 sub _tr_double_digits {
     for my $dg (keys %{$MAP{double_digits}}) {
-        ${$_[0]} =~ s!([^\d])$dg([^\d])!$1$MAP{double_digits}->{$dg}$2!g;
+        ${$_[0]} =~ s!(^|[^\d])$dg([^\d]|$)!$1$MAP{double_digits}->{$dg}$2!g;
     }
 }
 
