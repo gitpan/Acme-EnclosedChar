@@ -1,5 +1,8 @@
 Revision history for Perl extension Acme::EnclosedChar
 
+0.05    Sun Nov 16 11:39:55 JST 2014
+        - refactor
+
 0.04    Sat Nov  8 19:27:42 JST 2014
 
             commit 6159dda0c36935b8ea579eef0405ebac3e33b939
